@@ -7,6 +7,7 @@
   <version>1.0-SNAPSHOT</version>
   <name>01-maven-web-app Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -15,7 +16,25 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
   <build>
     <finalName>01-maven-web-app</finalName>
+    
+    <plugins>
+      <!-- SonarQube plugin configuration -->
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>3.9.0.1501</version>
+      </plugin>
+    </plugins>
   </build>
+  
+  <!-- SonarQube details -->
+  <properties>
+    <sonar.host.url>http://15.206.122.21:9000/</sonar.host.url>
+    <sonar.login>c4a6e56a3371fcfdfcd2e42df7ff0e0c520499f8</sonar.login>
+  </properties>
+  
 </project>
+
